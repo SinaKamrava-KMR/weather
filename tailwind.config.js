@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./dist/*.html'],
+  purge: ['./dist/**/*.{html,js}'],
   theme: {
     extend: {
       keyframes: {
@@ -20,13 +21,23 @@ module.exports = {
         openslid:{
           '0%': { width:'0' },
           '100%': {width:'40%' },
-        }
+        },
+        moveUp:{
+          '0%': { transform: 'translateY(200px) translateX(-50%)' },
+          '100%': {transform: 'translateY(0) translateX(-50%)' },
+        },
+        moveDown:{
+          '0%': { transform: 'translateY(0) translateX(-50%)' },
+          '100%': {transform: 'translateY(200px) translateX(-50%)' },
+        },
       },
       animation: {
         'move': 'move 2s ease',
         'left': 'move_left 1.8s ease',
         'fade-out': 'fadeOut 4s ease',
         'openslid': 'openslid 1s ease',
+        'moveUp': 'moveUp .8s ease-in forwards',
+        'moveDown': 'moveDown .8s ease-in forwards',
       }
     },
   },

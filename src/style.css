@@ -21,7 +21,7 @@
 @layer components {
 
   .login-modal{
-    @apply w-[400px] py-10 right-1/2 translate-x-1/2  rounded-md backdrop-blur-xl border border-slate-500 absolute top-1/2 sm:right-32 sm:translate-x-0 -translate-y-1/2 z-30 text-white flex items-center justify-center flex-col gap-5 px-5
+    @apply w-[400px] py-10 right-1/2 translate-x-1/2  rounded-md backdrop-blur-xl border border-slate-500 absolute top-1/2 sm:right-32 sm:translate-x-0 -translate-y-1/2 z-30 text-white flex items-center justify-center flex-col gap-5 px-5 transition-all duration-150
   }
 
   .form-input{
@@ -29,9 +29,16 @@
   }
 
   .search-modal{
-    @apply absolute top-10 z-40 right-0 rounded-md w-full h-[300px] bg-slate-50 px-3 py-2
+    @apply absolute top-10 z-40 right-0 rounded-md w-full flex flex-col gap-1 bg-slate-50 px-3 py-2
   }
 
+
+  .city-box{
+    @apply flex-1 w-full transition-all duration-500 self-end md:mb-2 md:mx-2 py-3 text-white bg-city rounded-md flex items-center gap-5 px-4
+  }
+  .cards-wrapper{
+    @apply flex w-full flex-wrap gap-3 h-full
+  }
 
 
 

@@ -18,55 +18,59 @@
   </section>
 
 
-  <section class="login-modal animate-move">
+  <section id="login-box" class="login-modal animate-move">
     <p class="text-white text-2xl font-bold">Login</p>
-    <form action="#" class="flex flex-col gap-3 w-full">
+    <form  action="#" class="flex flex-col gap-3 w-full">
       
       <span class="flex text-slate-400 items-center gap-2 rounded-sm bg-slate-50 px-2 py-2">
         <i class="bi bi-envelope-fill"></i>
-        <input type="email" placeholder="Email" class="form-input" required>
+        <input id="login-email" type="email" placeholder="Email" class="form-input" required>
       </span>
       <span class="flex text-slate-400 items-center gap-2 rounded-sm bg-slate-50 px-2 py-2">
         <i class="bi bi-shield-lock-fill"></i>
-        <input type="password" placeholder="Password" class="form-input" required>
+        <input id="login-password" type="password" placeholder="Password" class="form-input" required>
       </span>
       
       <a href="#" class="text-sm cursor-pointer text-slate-200">forget password ?</a>
-      <button type="submit" class="w-full bg-slate-600 rounded-sm p-2 flex items-center justify-center">
+      <button id="login-submit" type="submit" class="w-full bg-gray-700 rounded-sm p-2 flex items-center justify-center ">
         <div id="animation-wrapper" class="w-[24px] h-[24px]"></div>
-        <p class="mr-2 ">Continue</p> 
+        <p id="loginbt-text" class="mr-2">Continue</p> 
       </button>
 
     </form>
       <span class="h-[1px] w-full block bg-slate-700"></span>
-      <a href="#" class="text-blue-100">Create an account</a>
+      <a id="goToSignup" href="#" class="text-blue-100">Create an account</a>
   </section>
-  <section class="login-modal hidden">
+  <section id="signup-box" class="login-modal hidden animate-move">
     <p class="text-white text-2xl font-semibold">Sign up</p>
     <form action="#" class="flex flex-col gap-3 w-full">
       
       <span class="flex text-gray-400 items-center gap-2 rounded-sm bg-white px-2 py-2">
         <i class="bi bi-person-fill"></i>
-        <input type="text" placeholder="user name" class="form-input" required>
+        <input id="signUp-name" type="text" placeholder="user name" class="form-input" required>
       </span>
 
       <span class="flex text-gray-400 items-center gap-2 rounded-sm bg-white px-2 py-2">
         <i class="bi bi-envelope-fill"></i>
-        <input type="email" placeholder="email" class="form-input" required>
+        <input id="signup-email" type="email" placeholder="email" class="form-input" required>
       </span>
       <span class="flex text-gray-400 items-center gap-2 rounded-sm bg-white px-2 py-2">
         <i class="bi bi-shield-lock-fill"></i>
-        <input type="password" placeholder="password" class="form-input" required>
+        <input id="signup-password" type="password" placeholder="password" class="form-input" required>
+      </span>
+      <span class="flex text-gray-400 items-center gap-2 rounded-sm bg-white px-2 py-2">
+        <i class="bi bi-shield-lock-fill"></i>
+        <input id="signup-confirm-password" type="password" placeholder="confirm password" class="form-input" required>
       </span>
       
-      <button type="submit" class="w-full bg-slate-600 rounded-sm p-2 flex items-center justify-center">
-        <div id="animation-wrapper" class="w-[24px] h-[24px]"></div>
-        <p class="mr-2 ">Continue</p> 
+      <button id="signupbtn" type="submit" class="w-full bg-slate-600 rounded-sm p-2 flex items-center justify-center">
+        <div id="signup-animation-wrapper" class="w-[24px] h-[24px]"></div>
+        <p id="signuptext" class="mr-2 ">Continue</p> 
       </button>
 
     </form>
       <span class="h-[1px] w-full block bg-slate-700"></span>
-      <a href="#" class="text-blue-100">have an account</a>
+      <a id="gotoLogin" href="#" class="text-blue-100">have an account</a>
   </section>
 
 
@@ -93,10 +97,13 @@
 
 
 
+  <section id="error-modal" class="absolute bottom-10 py-3 px-5 text-white -translate-x-1/2 translate-y-[200px] left-1/2 bg-red-500 rounded-md z-40">
+   
+  </section>
 
 
   
 
-  <script src="scripts/login.js"></script>
+  <script type="module" src="scripts/login.js"></script>
 </body>
 </html>

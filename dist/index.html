@@ -14,40 +14,37 @@
 
 
   <section class="w-screen h-screen overflow-hidden -z-10 ">
-    <img class="w-full h-full object-cover" src="../assets/images/n1.jpg">
+    <img id="state-bg" class="w-full h-full object-cover" src="../assets/images/n1.jpg">
 </section>
 
-<main class="absolute  inset-0 flex flex-col md:flex-row">
-    <div class="cursor-pointer absolute right-10 top-5 text-white  py-1 px-2 backdrop-blur-2xl  border-b  border-gray-300">
+<main id="mainwrapper" class="absolute  inset-0 flex flex-col md:flex-row">
+    <div id="logout-btn" class="cursor-pointer absolute right-10 top-5 text-white  py-1 px-2 backdrop-blur-2xl  border-b  border-gray-300">
       <p>Logout</p>
     </div>
     <section class="w-full transition-all duration-500 md:w-2/5 h-full md:backdrop-blur-2xl overflow-hidden p-4  flex flex-col  gap-5 bg-city">
       <p class="text-2xl text-white mt-2">Weather Forecast</p>
-      <div class="flex w-full mt-5 relative  bg-white py-1 px-3 rounded-md text-slate-700">
-        <input type="text" class="bg-transparent outline-none border-0 h-full flex-1" placeholder="Search a city">
+      <div id="search-wrapper" class="flex w-full mt-5 relative  bg-white py-1 px-3 rounded-md text-slate-700">
+        <input  id="search-input" type="text" class="bg-transparent outline-none border-0 h-full flex-1" placeholder="Search a city">
         <i class="text-lg cursor-pointer bi bi-search"></i>
 
 
-        <div class="search-modal hidden">
-            <span class="bg-gray-200 text-slate-600 hover:bg-gray-300 cursor-pointer rounded-sm px-2 flex justify-between items-center">
-              <p >Tehran</p>
-              <i class=" mt-1 bi bi-x"></i>
-        </span>
+        <div id="search-modal"  class="search-modal hidden">
+          
         </div>
 
       </div>
 
-      <div  class="w-full relative flex-1 flex flex-col items-center justify-center">
-        <p class="text-3xl text-white text-center top-10 md:top-16 absolute hidden">We provides historical, current and forecasted <span class="text-red-300">weather</span> data </p>
-         <div id="location-content" class=" w-full h-[300px] object-cover hidden"></div>
+      <div id="search-contents-wrapper"  class="w-full relative flex-1 flex flex-col items-center justify-center">
+        <p id="text-empy-state" class="text-3xl text-white text-center top-10 md:top-16 absolute ">We provides historical, current and forecasted <span class="text-red-300">weather</span> data </p>
+         <div id="location-content" class="w-full h-[300px] object-cover hidden"></div>
           
-         <div class="flex w-full flex-wrap gap-3 h-full">
+         <div id="info-cards-wrapper" class="cards-wrapper hidden">
 
           <div class="backdrop-blur-lg  bg-city p-3 rounded-md min-w-[150px] flex-1 gap-2 text-white flex flex-col  items-center">
               <span class="text-5xl ml-4 flex-1 flex items-center"><i class="bi bi-thermometer-sun"></i></span>
               <span class="flex w-full justify-between">
                 <p>temp</p>
-                <p><span class="mr-1">17.12</span>C</p>
+                <p><span id="weather-temp" class="mr-1">17.12</span>C</p>
               </span>
           </div>
           <div class="backdrop-blur-lg  bg-city p-3 rounded-md min-w-[150px] flex-1 gap-2 text-white flex flex-col  items-center">
@@ -56,7 +53,7 @@
               </span>
               <span class="flex w-full justify-between">
                 <p>wind</p>
-                <p><span class="mr-1">12</span>km/h</p>
+                <p><span id="weather-wind" class="mr-1">12</span>km/h</p>
               </span>
           </div>
           <div class="backdrop-blur-lg  bg-city p-3 rounded-md min-w-[150px] flex-1 gap-2 text-white flex flex-col  items-center">
@@ -65,7 +62,7 @@
               </span>
               <span class="flex w-full justify-between">
                 <p>humidity</p>
-                <p><span class="mr-1">80</span></p>
+                <p><span id="weather-humidity" class="mr-1">80</span>%</p>
               </span>
           </div>
           <div class="backdrop-blur-lg  bg-city p-3 rounded-md min-w-[150px] flex-1 gap-2 text-white flex flex-col  items-center">
@@ -74,7 +71,7 @@
               </span>
               <span class="flex w-full justify-between">
                 <p>clouds</p>
-                <p><span class="mr-1">76</span>%</p>
+                <p><span id="weather-clouds" class="mr-1">76</span>%</p>
               </span>
           </div>
           <div class="backdrop-blur-lg  bg-city p-3 rounded-md min-w-[100px] flex-1 gap-2 text-white flex flex-col  items-center">
@@ -83,7 +80,7 @@
               </span>
               <span class="flex w-full justify-between">
                 <p>feels like</p>
-                <p><span class="mr-1">12</span>C</p>
+                <p><span id="weatherfeelsLike" class="mr-1">12</span>C</p>
               </span>
           </div>
 
@@ -97,23 +94,24 @@
 
     </section>
 
-    <section class="flex-1 w-full transition-all duration-500 self-end md:mb-2 md:mx-2 py-3 text-white bg-city rounded-md flex items-center gap-5  px-4">
-        <p class="text-7xl"><span>16</span> <sup>o</sup></p>
+    <section id="city-state-wrapper" class="city-box hidden">
+        <p  class="text-7xl"><span id="city-temp" >16</span> <sup>o</sup></p>
         <div class="items-center flex flex-col ">
-          <p class="text-city">London</p>
-          <p class="text-sm">06:09-Monday 9 Sep 19</p>
+          <p id="city-name" class="text-city">London</p>
+          <p id="date" class="text-sm">06:09-Monday 9 Sep 19</p>
         </div>
 
-        <div class="flex-1 flex flex-col items-end">
-          <div id="weather-state" class="w-[100px] h-[60px] overflow-hidden">
-          </div>
-          <p>scattered clouds</p>
+        <div class="flex-1 flex items-center justify-end">
+            <div class="flex flex-col items-center">
+                <div id="weather-state" class="w-[100px] h-[60px] overflow-hidden">
+                </div>
+                <p id="city-description" >scattered clouds</p>
+            </div>
         </div>
     </section>
 </main>
 
-  
 
-  <script src="scripts/app.js"></script>
+  <script type="module" src="scripts/app.js"></script>
 </body>
 </html>

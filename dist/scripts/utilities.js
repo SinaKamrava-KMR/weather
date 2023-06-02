@@ -14,6 +14,7 @@ export class Utilities{
         window.location =`${params}/index.html`
         break;
       case 'index.html':
+      case '.html':
         window.location =`${params}/login.html`
         break;
       }

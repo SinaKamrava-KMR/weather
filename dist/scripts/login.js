@@ -183,7 +183,7 @@ function loginLoadingAniamtion() {
 
     container: document.getElementById('animation-wrapper'),
     
-    path: '../../assets/animation/loading.json',
+    path: './assets/animation/loading.json',
     
     renderer: 'svg',
     
@@ -201,7 +201,7 @@ function signupLoadingAniamtion() {
 
     container: document.getElementById('signup-animation-wrapper'),
     
-    path: '../../assets/animation/loading.json',
+    path: './assets/animation/loading.json',
     
     renderer: 'svg',
     

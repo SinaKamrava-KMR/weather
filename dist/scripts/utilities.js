@@ -8,14 +8,14 @@ export class Utilities{
     page = page.split('.html')[0];
     page +='.html';
 
-    console.log(page);
+    console.log(params);
     switch (page) {
       case 'login.html':
         window.location =`${params}/index.html`
         break;
       case 'index.html':
       case '.html':
-        window.location =`${params}/login.html`
+       window.location =`${params}/login.html`
         break;
       }
 

@@ -129,7 +129,7 @@ function initAnimation() {
   let search = bodymovin.loadAnimation({
     container: document.getElementById("location-content"),
 
-    path: "../../assets/animation/search.json",
+    path: "./assets/animation/search.json",
 
     renderer: "svg",
 
@@ -146,12 +146,12 @@ function initAnimation() {
 function weatherCurrentState(state) {
   const CurrentState = Utilities.findCurrentStateFromDesc(state)
   const jsonName = CurrentState.animationJson;
-  stateBG.src=`../../assets/images/${CurrentState.currentImg}`
+  stateBG.src=`./assets/images/${CurrentState.currentImg}`
   document.getElementById("weather-state").innerHTML = '';
   let animation = bodymovin.loadAnimation({
     container: document.getElementById("weather-state"),
 
-    path: `../../assets/animation/${jsonName}`,
+    path: `./assets/animation/${jsonName}`,
 
     renderer: "svg",
 

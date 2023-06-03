@@ -44,6 +44,7 @@ loginBtn.addEventListener('click', (e) => {
   const password = document.getElementById('login-password').value;
   
   if (email == '' || !email.includes("@") || password == '') {
+    console.log("input Invalid");
     handelErrorModal('Invalid input');
     return;
   }
